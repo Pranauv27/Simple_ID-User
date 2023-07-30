@@ -1,0 +1,24 @@
+<form>
+    <h3>Update User</h3>
+    ID: <input type="text" [(ngModel)]="user.id" name="ID" id=""><button (click)="SearchUser()">search</button>
+    <br>
+    
+    <div *ngIf="status == 404">
+        <p>User is not found. Try again with any other ID</p>
+    </div>
+    <div *ngIf="status == 200">
+        <p>User Found:
+            <br>
+            {{ ID }} - {{ Name }}</p>
+    </div>
+    Name: <input type="text" [(ngModel)]="user.name" name="name" id="">
+    <button (click)="UpdateUser()">Update</button>
+    <div *ngIf="status == 0">
+        <p>User updated successfully!
+            <br>
+            New Details:
+            <br>
+            {{ ID }} - {{ Name }}
+        </p>
+    </div>
+</form>
