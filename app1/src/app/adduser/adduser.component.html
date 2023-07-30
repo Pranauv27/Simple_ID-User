@@ -1,0 +1,13 @@
+<form (submit)="addUser()">
+    <h3>Add User</h3>
+    ID: <input type="text" [(ngModel)]="user.id" name="ID" required>
+    <br>
+    Name: <input type="text" [(ngModel)]="user.name" name="name" required>
+    <button type="submit">Add</button>
+    <div *ngIf="status == 201">
+        <p>User Added Successfully!</p>
+    </div>
+    <div *ngIf="status == 409">
+        <p>Unable to add the user or user with given ID already exists.</p>
+    </div>
+</form>

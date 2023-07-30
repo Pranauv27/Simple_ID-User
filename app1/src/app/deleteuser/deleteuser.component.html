@@ -1,0 +1,13 @@
+<form>
+    <h3>Delete User</h3>
+    ID: <input type="text" [(ngModel)]="ID" name="ID" id=""><button (click)="SearchUser()">search</button><button (click)="DeleteUser()">Delete</button>
+    <div *ngIf="status == 404">
+        <p>User is not found. Try again with any other ID</p>
+    </div>
+    <div *ngIf="status == 0">
+        <p>User deleted successfully!</p>
+    </div>
+    <div *ngIf="status == 200">
+        <p>{{ user.id }} - {{ user.name }}</p>
+    </div>
+</form>
